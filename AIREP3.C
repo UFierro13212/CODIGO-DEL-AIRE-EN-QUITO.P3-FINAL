@@ -80,3 +80,16 @@ void generarAlertas(Zona zonas[]) {
     }
 }
 
+void mostrarResultados(Zona zonas[]) {
+    int i;
+
+    printf("\n========== REPORTE QUITOAIRE ==========\n");
+
+    for (i = 0; i < ZONAS; i++) {
+        printf("\nZona: %s\n", zonas[i].nombre);
+        printf("Prediccion 24h: %.2f\n", zonas[i].prediccion);
+        printf("Alerta: %s\n", zonas[i].alerta);
+        printf("Medida: %s\n", zonas[i].medida);
+    }
+}
+
