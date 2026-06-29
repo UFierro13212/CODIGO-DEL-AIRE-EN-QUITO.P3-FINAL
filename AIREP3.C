@@ -14,4 +14,12 @@ typedef struct {
     float prediccion;
     char alerta[30];
     char medida[100];
-} 
+} Zona;
+
+void limpiarBuffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+void ingresarDatos(Zona zonas[]) {
+    
