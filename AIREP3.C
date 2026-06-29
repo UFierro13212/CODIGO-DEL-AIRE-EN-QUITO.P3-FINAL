@@ -62,3 +62,21 @@ void calcularPrediccion(Zona zonas[]) {
             (zonas[i].viento * 0.10);
     }
 }
+
+void generarAlertas(Zona zonas[]) {
+    int i;
+
+    for (i = 0; i < ZONAS; i++) {
+        if (zonas[i].prediccion < 50) {
+            strcpy(zonas[i].alerta, "BAJA");
+            strcpy(zonas[i].medida, "Calidad del aire aceptable.");
+        } else if (zonas[i].prediccion < 100) {
+            strcpy(zonas[i].alerta, "MEDIA");
+            strcpy(zonas[i].medida, "Evitar actividad fisica intensa al aire libre.");
+        } else {
+            strcpy(zonas[i].alerta, "ALTA");
+            strcpy(zonas[i].medida, "Reducir trafico y evitar exposicion prolongada.");
+        }
+    }
+}
+
