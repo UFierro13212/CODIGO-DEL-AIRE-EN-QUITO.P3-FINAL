@@ -49,3 +49,16 @@ void ingresarDatos(Zona zonas[]) {
         limpiarBuffer();
     }
 }
+
+void calcularPrediccion(Zona zonas[]) {
+    int i;
+
+    for (i = 0; i < ZONAS; i++) {
+        zonas[i].prediccion =
+            (zonas[i].pm25 * 0.45) +
+            (zonas[i].co2 * 0.25) +
+            (zonas[i].humedad * 0.10) +
+            (zonas[i].temperatura * 0.10) -
+            (zonas[i].viento * 0.10);
+    }
+}
