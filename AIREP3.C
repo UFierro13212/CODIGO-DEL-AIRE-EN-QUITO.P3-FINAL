@@ -1,4 +1,5 @@
 
+
 #include <stdio.h>
 #include <string.h>
 
@@ -104,4 +105,15 @@ void guardarArchivo(Zona zonas[]) {
         return;
     }
 
-    
+    fprintf(archivo, "========== REPORTE QUITOAIRE ==========\n");
+
+    for (i = 0; i < ZONAS; i++) {
+        fprintf(archivo, "\nZona: %s\n", zonas[i].nombre);
+        fprintf(archivo, "Prediccion 24h: %.2f\n", zonas[i].prediccion);
+        fprintf(archivo, "Alerta: %s\n", zonas[i].alerta);
+        fprintf(archivo, "Medida: %s\n", zonas[i].medida);
+    }
+
+    fclose(archivo);
+}
+
