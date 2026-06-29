@@ -117,3 +117,19 @@ void guardarArchivo(Zona zonas[]) {
     fclose(archivo);
 }
 
+int main() {
+    Zona zonas[ZONAS];
+
+    printf("===== SISTEMA QUITOAIRE =====\n");
+
+    ingresarDatos(zonas);
+    calcularPrediccion(zonas);
+    generarAlertas(zonas);
+    mostrarResultados(zonas);
+    guardarArchivo(zonas);
+
+    printf("\nReporte guardado correctamente.\n");
+
+    return 0;
+}
+
