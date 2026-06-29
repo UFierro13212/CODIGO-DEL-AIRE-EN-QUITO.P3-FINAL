@@ -93,3 +93,15 @@ void mostrarResultados(Zona zonas[]) {
     }
 }
 
+void guardarArchivo(Zona zonas[]) {
+    FILE *archivo;
+    int i;
+
+    archivo = fopen("reporte_quitoaire.txt", "w");
+
+    if (archivo == NULL) {
+        printf("Error al crear el archivo.\n");
+        return;
+    }
+
+    
